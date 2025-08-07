@@ -1,12 +1,6 @@
-# ~/.bashrc
-# Minimalistische Bash-Konfiguration – portabel, distro-neutral
-
-# ========== Prompt ==========
-# Einfache, aber farbige Darstellung: user@host [Pfad] $
-
-# ========================
-# == Textformatierungen ==
-# ========================
+# ===========================
+# == Text-format variables ==
+# ===========================
 
 RESET="\[\e[0m\]"       # Alle Attribute zurücksetzen
 BOLD="\[\e[1m\]"        # Fett
@@ -16,11 +10,11 @@ BLINK="\[\e[5m\]"       # Blinken (nicht überall unterstützt)
 REVERSE="\[\e[7m\]"     # Hintergrund/Vordergrund tauschen
 HIDDEN="\[\e[8m\]"      # Versteckter Text
 
-# ========================
-# == Vordergrundfarben ===
-# ========================
+# ===============
+# == Colours ===
+# ===============
 
-# Normale Farben
+# Regular colours
 BLACK="\[\e[30m\]"
 RED="\[\e[31m\]"
 GREEN="\[\e[32m\]"
@@ -30,7 +24,7 @@ MAGENTA="\[\e[35m\]"
 CYAN="\[\e[36m\]"
 WHITE="\[\e[37m\]"
 
-# Helle Farben
+# Bright colours
 BRIGHT_BLACK="\[\e[90m\]"
 BRIGHT_RED="\[\e[91m\]"
 BRIGHT_GREEN="\[\e[92m\]"
@@ -40,9 +34,9 @@ BRIGHT_MAGENTA="\[\e[95m\]"
 BRIGHT_CYAN="\[\e[96m\]"
 BRIGHT_WHITE="\[\e[97m\]"
 
-# ========================
-# == Hintergrundfarben ===
-# ========================
+# =========================
+# == Background colours ===
+# =========================
 
 BG_BLACK="\[\e[40m\]"
 BG_RED="\[\e[41m\]"
@@ -72,7 +66,7 @@ HISTIGNORE="ls:cd:clear:c"
 HISTTIMEFORMAT="%F %T "
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-# ========== Aliase ==========
+# ========== Aliases ==========
 alias c='clear'
 alias l='ls'
 alias ll='ls -lh'
@@ -81,13 +75,13 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ~='cd ~'
 
-# Interaktive Standardbefehle (Schutz vor Fehlern)
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+# Error Protection
+alias rm='rm -I'
+alias cp='cp -I'
+alias mv='mv -I'
 
-# ========== Optionen ==========
-# LS-Farbe aktivieren, falls möglich
+# ========== Options ==========
+# activate ls-colour, if possible
 if command -v dircolors >/dev/null 2>&1; then
   eval "$(dircolors -b)"
   alias ls='ls --color=auto'
