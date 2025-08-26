@@ -1,0 +1,16 @@
+[manager]
+show_hidden = true      # auch dotfiles anzeigen
+sort_dir_first = true   # Ordner zuerst
+scrolloff = 5           # Puffer beim Scrollen
+
+[preview]
+wrap = true             # Text-Preview umbrechen
+max_width = 120
+max_height = 40
+
+[open]
+edit = "nvim"           # Standardeditor
+image = "imv"           # Bildbetrachter
+video = "vlc"           # Videoplayer
+pdf   = "zathura"       # PDF-Viewer
+

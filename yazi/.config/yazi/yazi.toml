@@ -1,0 +1,12 @@
+[mgr]
+show_hidden = true      # auch dotfiles anzeigen
+sort_dir_first = true   # Ordner zuerst
+scrolloff = 5           # Puffer beim Scrollen
+
+[preview]
+wrap = "yes"             # Text-Preview umbrechen
+max_width = 120
+max_height = 40
+
+
+
