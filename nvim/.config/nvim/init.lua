@@ -17,6 +17,17 @@ vim.opt.incsearch = true         -- Show matches while typing
 vim.opt.hlsearch = true          -- Highlight search matches
 vim.opt.termguicolors = true     -- True color support
 vim.opt.scrolloff = 5            -- Minimal number of screen lines above/below cursor
+-----------------------------------------------------------
+-- Syntax Highlighting & Theme
+-----------------------------------------------------------
+vim.cmd("syntax on")              -- Syntax-Highlighting aktivieren
+vim.cmd("colorscheme elflord")    -- Standard-Theme laden
+
+-- Transparenten Hintergrund setzen (kitty zeigt dann dein Schwarz mit 0.9 opacity)
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
 
 -----------------------------------------------------------
 -- Indentation
@@ -44,10 +55,3 @@ vim.keymap.set("i", "jk", "<Esc>")
 
 -- Clear search highlight
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
-
------------------------------------------------------------
--- Plugins (optional - using lazy.nvim or similar)
------------------------------------------------------------
--- You can leave this section empty if you don't want plugins yet
--- I can generate a minimal plugin setup using lazy.nvim on request
-
