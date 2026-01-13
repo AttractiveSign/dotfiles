@@ -15,6 +15,8 @@
     "modules-right": [
         "tray",
         // "custom/language",
+        "battery",
+        "network",
         "pulseaudio",
         "pulseaudio#microphone",
         "custom/weather",
@@ -79,15 +81,41 @@
         "tooltip": false,
         "spacing": 10
     },
+
+    "battery": {
+    "bat": "BAT0",
+    "adapter": "AC",
+    "interval": 30,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+    "network": {
+    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
+    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>  </span> Ethernet",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
+    "tooltip-format-wifi": "Signal Strength: {signalStrength}%"
+    },
+
     "clock": {
-        "format":"<b>󰥔 {:%I:%M 󰃭 %d/%m}</b>",
+        "format":"<b>󰥔 {:%H:%M 󰃭 %d.%m.}</b>",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
+
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": " Muted",
         "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer -i 5",
         "on-scroll-down": "pamixer -d 5",
         "scroll-step": 5,
@@ -107,6 +135,7 @@
         "format-source": "󰍬 {volume}%",
         "format-source-muted": "󰍭 Muted",
         "on-click": "pamixer --default-source -t",
+        "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
