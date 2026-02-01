@@ -1,0 +1,18 @@
+# ~/.config/wofi/config
+
+[wofi]
+# Theme/Style-Datei
+style = /home/naeve/.config/wofi/style.css
+
+# Schriftgröße
+font = "JetBrains Mono 12"
+
+# Position & Größe
+width = 500
+height = 400
+location = center
+
+# Menü Verhalten
+hide-scrollbar = false
+case-sensitive = false
+
